@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blind Maze Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Halaman Home -->
+    <div id="home" class="show">
+      <h2>Selamat datang</h2>
+      <input
+        id="username"
+        name="username"
+        placeholder="Masukan Username"
+        type="text"
+      />
+      <button id="gameBtn">Play Game</button>
+      <button id="peringkatBtn" onclick="navigasiKe('peringkat')">
+        Peringkat
+      </button>
+    </div>
+    <!-- akhir halaman home -->
+
+    <!-- Halaman Game -->
+    <div id="game" class="hidde">
+      <button id="homeBtn">Back</button>
+      <div id="timer">Menghafal jalur: 10</div>
+      <div class="maze-container" id="maze"></div>
+      <div id="darah">Darah: ❤❤❤❤❤</div>
+      <div id="skor">Skor: 0</div>
+      <button id="bantuan" disabled>Bantuan : 1</button>
+    </div>
+    <!-- akhir halaman game -->
+
+    <!-- halaman peringkat -->
+    <div id="peringkat" class="peringkat hidde">
+      <button onclick="navigasiKe('home')">Kembali</button>
+      <h2>Papan Peringkat BlindMaze</h2>
+      <div class="peringkat-container"></div>
+    </div>
+    <!-- akhir halaman peringkat -->
+
+    <!-- modal alert -->
+    <div id="alert" class="alert">
+      <div class="content">
+        <p>Game Berakhir</p>
+        <p>
+          <span id="nama">Nama</span>, Kamu mendapatkan skor
+          <span id="skorAlert">0</span>
+        </p>
+        <button id="tryAgainBtn" onclick="navigasiKe('game')">Try Again</button>
+        <button id="alertHomeBtn" onclick="navigasiKe('home')">
+          Back To Home
+        </button>
+      </div>
+    </div>
+    <!-- akhir modal alert -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
