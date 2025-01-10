@@ -9,35 +9,63 @@
   <body>
     <!-- Halaman Home -->
     <div id="home" class="show">
-      <h2>Selamat datang</h2>
-      <input
-        id="username"
-        name="username"
-        placeholder="Masukan Username"
-        type="text"
-      />
-      <button id="gameBtn">Play Game</button>
-      <button id="peringkatBtn" onclick="navigasiKe('peringkat')">
-        Peringkat
-      </button>
+      <div class="home">
+        <h2 class="title">Welcome to <span class="bold">BlindMaze</span></h2>
+      <label class="label-username" for="username">
+        <p>
+          Silahkan masukan USERNAME untuk mulai bermain
+          <span class="bold">BlindMaze</span>
+        </p>
+        <input
+          class="input-username"
+          id="username"
+          name="username"
+          placeholder="Masukan Username"
+          type="text"
+        />
+      </div>
+      </label>
+      <div class="btn-group">
+        <button class="btn-play" id="gameBtn">Play Game</button>
+        <div class="btn-group">
+          <button
+            class="btn-peringkat"
+            id="peringkatBtn"
+            onclick="navigasiKe('peringkat')"
+          >
+            Peringkat🥇
+          </button>
+          <button
+            class="btn-petunjuk"
+            id="petunjukBtn"
+            onclick="navigasiKe('petunjuk')"
+          >
+            Petunjuk💡
+          </button>
+        </div>
+      </div>
     </div>
     <!-- akhir halaman home -->
 
     <!-- Halaman Game -->
     <div id="game" class="hidde">
-      <button id="homeBtn">Back</button>
-      <div id="timer">Menghafal jalur: 10</div>
+      <!-- <button id="homeBtn">Back</button> -->
+      <div class="game-head">
+        <p id="timer">Menghafal jalur: 10</p>
+        <button id="bantuan" disabled>Bantuan : 1</button>
+      </div>
       <div class="maze-container" id="maze"></div>
-      <div id="darah">Darah: ❤❤❤❤❤</div>
-      <div id="skor">Skor: 0</div>
-      <button id="bantuan" disabled>Bantuan : 1</button>
+      <div class="skor-darah">
+        <p id="skor">Skor: 0</p>
+        <p id="darah" class="darah">❤❤❤❤❤</p>
+      </div>
     </div>
     <!-- akhir halaman game -->
 
     <!-- halaman peringkat -->
     <div id="peringkat" class="peringkat hidde">
-      <button onclick="navigasiKe('home')">Kembali</button>
-      <h2>Papan Peringkat BlindMaze</h2>
+      <button class="btn-home" onclick="navigasiKe('home')">Kembali</button>
+      <h2 class="title-peringkat">Papan Peringkat BlindMaze</h2>
       <div class="peringkat-container"></div>
     </div>
     <!-- akhir halaman peringkat -->
@@ -45,15 +73,17 @@
     <!-- modal alert -->
     <div id="alert" class="alert">
       <div class="content">
-        <p>Game Berakhir</p>
-        <p>
+        <p class="title-alert">Game Berakhir</p>
+        <p class="text-alert">
           <span id="nama">Nama</span>, Kamu mendapatkan skor
           <span id="skorAlert">0</span>
         </p>
-        <button id="tryAgainBtn" onclick="navigasiKe('game')">Try Again</button>
-        <button id="alertHomeBtn" onclick="navigasiKe('home')">
+        <div class="btn-group">
+          <button class="btn-try" id="tryAgainBtn" onclick="navigasiKe('game')">Try Again</button>
+        <button class="btn-home" id="alertHomeBtn" onclick="navigasiKe('home')">
           Back To Home
         </button>
+        </div>
       </div>
     </div>
     <!-- akhir modal alert -->
